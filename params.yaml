@@ -1,0 +1,7 @@
+preprocessing:
+  input_path: data/Sport car price.csv
+  output_train_path: data/processed_train_data.csv
+  output_test_path: data/processed_test_data.csv
+  output_pipeline_path: data/pipeline.pkl
+  test_size: 0.2
+  random_state: 42
