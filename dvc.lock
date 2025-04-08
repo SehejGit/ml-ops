@@ -28,3 +28,35 @@ stages:
       hash: md5
       md5: adf63b6ce20f7ee74f63d5dabb325226
       size: 10829967
+  preprocess:
+    cmd: python src/preprocessing.py
+    deps:
+    - path: data/Sport car price.csv
+      hash: md5
+      md5: 70225d016f392f28508453bc1c0c8750
+      size: 49190
+    - path: src/preprocessing.py
+      hash: md5
+      md5: 70de19b4ce9ec6dc418cd214aea3cf56
+      size: 4783
+    params:
+      params.yaml:
+        preprocessing.input_path: data/Sport car price.csv
+        preprocessing.output_pipeline_path: data/pipeline.pkl
+        preprocessing.output_test_path: data/processed_test_data.csv
+        preprocessing.output_train_path: data/processed_train_data.csv
+        preprocessing.random_state: 42
+        preprocessing.test_size: 0.2
+    outs:
+    - path: data/pipeline.pkl
+      hash: md5
+      md5: 627900274be5f50cb779a6a5a72e8b95
+      size: 1076
+    - path: data/processed_test_data.csv
+      hash: md5
+      md5: b6b2ede4b48e45241626743bcc310884
+      size: 10076
+    - path: data/processed_train_data.csv
+      hash: md5
+      md5: 6a668fc90598b4447c8e97225936f931
+      size: 39634
